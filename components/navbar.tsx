@@ -1,6 +1,6 @@
 'use client'
 
-import {useRouter, usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { useState } from 'react'
 import Link from 'next/link'
 import { LogOut, Menu, X } from 'lucide-react'
@@ -42,7 +42,13 @@ export function Navbar() {
       </nav>
 
       <div className="col-start-3 justify-self-end">
-        <Button variant="ghost" size="icon-lg" aria-label="Sair" className="hidden lg:inline-flex" onClick={() => router.push(routes.login)}>
+        <Button
+          variant="ghost"
+          size="icon-lg"
+          aria-label="Sair"
+          className="hidden lg:inline-flex"
+          onClick={() => router.push(routes.login)}
+        >
           <LogOut className="size-5" aria-hidden />
         </Button>
         <Button
@@ -86,7 +92,14 @@ export function Navbar() {
               )
             })}
           </nav>
-          <Button variant="ghost" className="mt-2 justify-start gap-3 px-4 text-sm">
+          <Button
+            variant="ghost"
+            className="mt-2 justify-start gap-3 px-4 text-sm"
+            onClick={() => {
+              setMenuOpen(false)
+              router.push(routes.login)
+            }}
+          >
             <LogOut className="size-5" aria-hidden />
             Sair
           </Button>
