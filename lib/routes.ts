@@ -5,6 +5,7 @@ export const routes = {
   cooperativas: '/cooperativas',
   recursos: '/recursos',
   sobre: '/sobre-o-projeto',
+  login: '/login',
 } as const
 
 export const navLinks = [

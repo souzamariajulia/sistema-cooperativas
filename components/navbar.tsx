@@ -1,8 +1,8 @@
 'use client'
 
+import {useRouter, usePathname } from 'next/navigation'
 import { useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { LogOut, Menu, X } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -10,6 +10,7 @@ import { navLinks, routes } from '@/lib/routes'
 
 export function Navbar() {
   const pathname = usePathname()
+  const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
 
   const isActive = (href: string) =>
@@ -41,7 +42,7 @@ export function Navbar() {
       </nav>
 
       <div className="col-start-3 justify-self-end">
-        <Button variant="ghost" size="icon-lg" aria-label="Sair" className="hidden lg:inline-flex">
+        <Button variant="ghost" size="icon-lg" aria-label="Sair" className="hidden lg:inline-flex" onClick={() => router.push(routes.login)}>
           <LogOut className="size-5" aria-hidden />
         </Button>
         <Button
