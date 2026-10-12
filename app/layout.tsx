@@ -1,13 +1,15 @@
-import "./globals.css"
+import { Manrope } from 'next/font/google'
+import './globals.css'
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+})
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="pt-BR" className={manrope.variable}>
+      <body className="font-sans">{children}</body>
     </html>
   )
 }
