@@ -33,7 +33,7 @@ export function LoginForm() {
 
       <form className="mt-12 flex flex-col">
         <label htmlFor="login" className="text-sm font-bold">
-          E-mail ou CNPJ
+          E-mail
         </label>
         <div className="relative mt-4">
           <Mail
@@ -43,8 +43,9 @@ export function LoginForm() {
           <Input
             id="login"
             name="login"
+            type="email"
             autoComplete="username"
-            placeholder="Digite seu e-mail ou CNPJ"
+            placeholder="Digite seu e-mail"
             className={fieldClass}
           />
         </div>
