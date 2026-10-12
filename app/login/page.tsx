@@ -1,6 +1,8 @@
 import Image from "next/image"
 import { Handshake } from "lucide-react"
 
+import { LoginForm } from "@/components/login-form"
+
 export default function LoginPage() {
   return (
     <main className="grid min-h-screen grid-cols-1 md:grid-cols-[51fr_49fr]">
@@ -36,7 +38,9 @@ export default function LoginPage() {
           className="absolute bottom-0 left-0 h-auto w-[102%] max-w-none translate-y-1/4"
         />
       </section>
-      <section className="bg-brand-navy" />
+      <section className="flex items-center justify-center bg-brand-navy px-6 py-12">
+        <LoginForm />
+      </section>
     </main>
   )
 }
