@@ -1,35 +1,25 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import {
-  ArrowRight,
-  Eye,
-  EyeOff,
-  Lock,
-  Mail,
-  ShieldCheck,
-  User,
-} from "lucide-react"
+import { useState } from 'react'
+import { ArrowRight, Eye, EyeOff, Lock, Mail, ShieldCheck, User } from 'lucide-react'
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 const fieldClass =
-  "h-16 rounded-lg border-[#3F6572] bg-[#123D4A] pl-14 text-base text-brand-white placeholder:text-[#7FAEB5] dark:bg-[#123D4A] md:text-base"
+  'h-16 rounded-lg border-field-border bg-field pl-14 text-base text-brand-white placeholder:text-field-muted md:text-base'
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
-    <div className="flex w-full max-w-md flex-col text-brand-white">
-      <div className="flex size-18 items-center justify-center rounded-full border border-brand-teal/30 bg-brand-teal/15 text-brand-teal">
+    <div className="text-brand-white flex w-full max-w-md flex-col">
+      <div className="border-brand-teal/30 bg-brand-teal/15 text-brand-teal flex size-18 items-center justify-center rounded-full border">
         <User className="size-8" aria-hidden />
       </div>
 
       <h2 className="mt-9 text-4xl font-extrabold">Bem-vindo de volta!</h2>
-      <p className="mt-4 text-base text-brand-white/60">
-        Bom ter você aqui. Vamos continuar?
-      </p>
+      <p className="text-brand-white/60 mt-4 text-base">Bom ter você aqui. Vamos continuar?</p>
 
       <form className="mt-12 flex flex-col">
         <label htmlFor="login" className="text-sm font-bold">
@@ -37,7 +27,7 @@ export function LoginForm() {
         </label>
         <div className="relative mt-4">
           <Mail
-            className="pointer-events-none absolute left-5 top-1/2 size-5 -translate-y-1/2 text-[#7FAEB5]"
+            className="text-field-muted pointer-events-none absolute top-1/2 left-5 size-5 -translate-y-1/2"
             aria-hidden
           />
           <Input
@@ -55,13 +45,13 @@ export function LoginForm() {
         </label>
         <div className="relative mt-4">
           <Lock
-            className="pointer-events-none absolute left-5 top-1/2 size-5 -translate-y-1/2 text-[#7FAEB5]"
+            className="text-field-muted pointer-events-none absolute top-1/2 left-5 size-5 -translate-y-1/2"
             aria-hidden
           />
           <Input
             id="password"
             name="password"
-            type={showPassword ? "text" : "password"}
+            type={showPassword ? 'text' : 'password'}
             autoComplete="current-password"
             placeholder="Digite sua senha"
             className={`${fieldClass} pr-14`}
@@ -69,8 +59,8 @@ export function LoginForm() {
           <button
             type="button"
             onClick={() => setShowPassword((visible) => !visible)}
-            aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
-            className="absolute right-5 top-1/2 -translate-y-1/2 text-[#7FAEB5] hover:text-brand-white"
+            aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
+            className="text-field-muted hover:text-brand-white absolute top-1/2 right-5 -translate-y-1/2"
           >
             {showPassword ? (
               <EyeOff className="size-5" aria-hidden />
@@ -80,17 +70,11 @@ export function LoginForm() {
           </button>
         </div>
 
-        <a
-          href="#"
-          className="mt-5 self-end text-sm text-brand-white/60 hover:text-brand-white"
-        >
+        <a href="#" className="text-brand-white/60 hover:text-brand-white mt-5 self-end text-sm">
           Esqueci minha senha
         </a>
 
-        <Button
-          type="submit"
-          className="mt-7 h-16 justify-between rounded-lg px-6 text-base font-bold text-brand-white"
-        >
+        <Button type="submit" className="mt-7 justify-between">
           Acessar minha conta
           <ArrowRight className="size-5" aria-hidden />
         </Button>
