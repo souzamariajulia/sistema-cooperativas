@@ -2,16 +2,17 @@
 
 import { useState } from 'react'
 import { ArrowRight, Eye, EyeOff, Lock, Mail, ShieldCheck, User } from 'lucide-react'
-
+import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { routes } from '@/lib/routes'
 
 const fieldClass =
   'h-16 rounded-lg border-field-border bg-field pl-14 text-base text-brand-white placeholder:text-field-muted md:text-base'
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
-
+  const router = useRouter()
   return (
     <div className="text-brand-white flex w-full max-w-md flex-col">
       <div className="border-brand-teal/30 bg-brand-teal/15 text-brand-teal flex size-18 items-center justify-center rounded-full border">
@@ -21,7 +22,10 @@ export function LoginForm() {
       <h2 className="mt-9 text-4xl font-extrabold">Bem-vindo de volta!</h2>
       <p className="text-brand-white/60 mt-4 text-base">Bom ter você aqui. Vamos continuar?</p>
 
-      <form className="mt-12 flex flex-col">
+      <form className="mt-12 flex flex-col" onSubmit={(e) => {
+        e.preventDefault()
+        router.push(routes.home)
+      }}>
         <label htmlFor="login" className="text-sm font-bold">
           E-mail
         </label>
