@@ -8,6 +8,9 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./*"]
+    },
     "strict": false,
     "noEmit": true,
     "incremental": true,
