@@ -81,24 +81,26 @@ export default function GuiaPage() {
     <>
       <section className="bg-brand-navy px-gutter flex min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] items-center py-16">
         <div className="text-brand-white flex flex-col gap-8">
-          <h1 className="max-w-4xl text-5xl leading-none tracking-widest xl:text-7xl">
-            Sobre o{' '}
-            <strong className="text-brand-yellow font-extrabold">Guia de implementação</strong>
+          <h1 className="text-4xl leading-tight font-bold xl:text-5xl">
+            Sobre o <strong className="text-brand-yellow font-bold">Guia de implementação</strong>
           </h1>
           <p className="max-w-xl text-lg leading-snug xl:text-2xl">
             O guia foi desenvolvido para auxiliar as cooperativas na aplicação das estratégias
             propostas no Plano de Negócio.
           </p>
-          <Button variant="outline-light" size="xl" className="w-fit">
+          <Button variant="outline-light" className="w-fit">
             Baixar guia completo
-            <Download className="size-8" aria-hidden />
+            <Download className="size-5" aria-hidden />
           </Button>
         </div>
       </section>
 
       <KeywordsBar />
 
-      <section className="bg-brand-teal px-gutter flex flex-col gap-24 py-20">
+      <section
+        aria-label="Como usar o guia e áreas de foco"
+        className="bg-brand-teal px-gutter flex flex-col gap-24 py-20"
+      >
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-14">
           <h2 className="text-brand-white text-center text-4xl md:text-5xl xl:text-7xl">
             Como <strong className="text-brand-yellow font-extrabold">utilizar o guia?</strong>
@@ -107,7 +109,7 @@ export default function GuiaPage() {
             {steps.map(({ title, description, tone }, index) => (
               <li key={`${title}-${index}`} className={cn('rounded-lg p-8', tones[tone])}>
                 <div className="flex items-center gap-4">
-                  <span className="text-7xl leading-none font-extrabold xl:text-8xl">
+                  <span aria-hidden className="text-7xl leading-none font-extrabold xl:text-8xl">
                     {index + 1}
                   </span>
                   <h3 className="text-2xl leading-tight font-bold xl:text-3xl">{title}</h3>
