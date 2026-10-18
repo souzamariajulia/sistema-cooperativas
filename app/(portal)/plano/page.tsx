@@ -12,9 +12,9 @@ export default function PlanoPage() {
     <>
       <section className="bg-brand-teal px-gutter relative flex min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] items-center overflow-hidden py-16">
         <div className="text-brand-white relative z-10 flex flex-col gap-8 lg:max-w-[48%]">
-          <h1 className="text-5xl leading-none font-extrabold tracking-widest xl:text-7xl">
+          <h1 className="text-4xl leading-tight font-bold xl:text-5xl">
             <span className="block font-normal">Sobre o</span>
-            <span className="mt-2 block">Plano de Negócio</span>
+            <span className="block">Plano de Negócio</span>
           </h1>
           <p className="max-w-xl text-lg leading-snug xl:text-2xl">
             O plano reúne estratégias e ações para fortalecer a comunicação, organizar o
