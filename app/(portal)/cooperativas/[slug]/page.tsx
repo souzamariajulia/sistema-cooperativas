@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 import { KeywordsBar } from '@/components/keywords-bar'
@@ -33,13 +32,12 @@ export default async function SobrePage({ params }: Props) {
 
       <KeywordsBar />
 
-      <Image
-        src={details.map.src}
-        alt={details.map.alt}
-        width={details.map.width}
-        height={details.map.height}
-        sizes="100vw"
-        className="h-auto w-full"
+      <iframe
+        title={details.location.title}
+        src={`https://www.google.com/maps?q=${encodeURIComponent(details.location.query)}&output=embed`}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="aspect-[1440/689] min-h-96 w-full border-0"
       />
     </>
   )
