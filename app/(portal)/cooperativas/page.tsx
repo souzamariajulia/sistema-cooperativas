@@ -68,20 +68,23 @@ export default function CooperativasPage() {
         />
 
         <h2 className="sr-only">Cooperativas contempladas pelo projeto</h2>
-        <ul className="relative z-10 mx-auto flex max-w-[63rem] flex-col gap-8">
+        <ul className="relative z-10 mx-auto flex max-w-[76rem] flex-col gap-8">
           {cooperativas.map(({ name, description }) => (
             <li
               key={name}
-              className="bg-brand-navy text-brand-white grid gap-6 rounded-lg p-8 md:grid-cols-2 md:gap-10"
+              className="group bg-brand-navy text-brand-white grid items-center gap-6 rounded-3xl p-8 shadow-lg transition duration-300 ease-out hover:shadow-2xl motion-safe:hover:-translate-y-1.5 md:grid-cols-[1fr_1.4fr_auto] md:gap-10 md:px-12"
             >
               <h3 className="text-brand-yellow text-4xl font-extrabold xl:text-5xl">{name}</h3>
-              <div className="flex flex-col items-start gap-6">
-                <p className="text-lg leading-snug xl:text-xl">{description}</p>
-                <Button variant="link" className="text-brand-white h-auto p-0 text-base">
-                  Conhecer
-                  <ArrowRight className="size-5" aria-hidden />
-                </Button>
-              </div>
+              <p className="text-brand-white/90 text-lg leading-relaxed xl:text-xl">
+                {description}
+              </p>
+              <Button
+                variant="accent"
+                className="group-hover:bg-brand-white w-fit rounded-full transition-colors"
+              >
+                Conhecer
+                <ArrowRight className="size-5" aria-hidden />
+              </Button>
             </li>
           ))}
         </ul>
