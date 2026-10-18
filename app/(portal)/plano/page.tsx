@@ -61,9 +61,9 @@ export default function PlanoPage() {
           <strong className="text-brand-yellow font-black">transformação digital</strong>
           <span className="text-brand-yellow">.</span>
         </p>
-        <Button variant="outline-light" size="xl" className="relative z-10">
+        <Button variant="outline-light" className="relative z-10">
           Baixar plano em pdf
-          <Download className="size-8" aria-hidden />
+          <Download className="size-5" aria-hidden />
         </Button>
       </section>
     </>
