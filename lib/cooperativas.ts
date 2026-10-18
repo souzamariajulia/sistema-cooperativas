@@ -2,7 +2,7 @@ export type CooperativaImage = { src: string; alt: string }
 
 export type CooperativaDetails = {
   about: string
-  location: { query: string; title: string }
+  location: { latitude: number; longitude: number; zoom: number; title: string }
   portrait: string
   logo: CooperativaImage
   colors: string[]
@@ -30,7 +30,9 @@ export const cooperativas: Cooperativa[] = [
       about:
         'A COOPEVI — fundada em 23 de outubro de 2012, no Assentamento Cristina Alves, município de Itapecuru Mirim — congrega 80 cooperados (com 12 na diretoria, sendo metade composta por mulheres e jovens) e tem abrangência regional sobre quatro municípios. Está consolidada nos mercados institucionais (85% das vendas para Programa de Aquisição de Alimentos (PAA), Programa Nacional de Alimentação Escolar (PNAE) e Armazém do Campo), com portfólio produtivo de peso (20.000 kg anuais de arroz beneficiado, 15.000 kg de farinha de mandioca d’água, 10.000 kg de feijão, entre outros) e infraestrutura produtiva completa: galinheiro, áreas de arroz, hortas, galpão, frota de transporte e sede com energia solar.',
       location: {
-        query: 'Assentamento Cristina Alves, Itapecuru Mirim, Maranhão',
+        latitude: -3.3973569,
+        longitude: -44.3560724,
+        zoom: 12,
         title: 'Localização da COOPEVI no mapa',
       },
       portrait: '/assets/cooperativas/coopevi/person.webp',

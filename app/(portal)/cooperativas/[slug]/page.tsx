@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { CooperativaMap } from '@/components/cooperativa-map'
 import { KeywordsBar } from '@/components/keywords-bar'
 import { getCooperativa } from '@/lib/cooperativas'
 
@@ -15,9 +16,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SobrePage({ params }: Props) {
   const { slug } = await params
-  const details = getCooperativa(slug)?.details
+  const cooperativa = getCooperativa(slug)
+  const details = cooperativa?.details
 
-  if (!details) notFound()
+  if (!cooperativa || !details) notFound()
 
   return (
     <>
@@ -32,12 +34,10 @@ export default async function SobrePage({ params }: Props) {
 
       <KeywordsBar />
 
-      <iframe
-        title={details.location.title}
-        src={`https://www.google.com/maps?q=${encodeURIComponent(details.location.query)}&output=embed`}
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        className="aspect-[1440/689] min-h-96 w-full border-0"
+      <CooperativaMap
+        {...details.location}
+        name={cooperativa.name}
+        description={cooperativa.description}
       />
     </>
   )
