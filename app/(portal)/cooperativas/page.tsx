@@ -37,19 +37,21 @@ export default function CooperativasPage() {
           </p>
         </div>
 
-        <div
-          aria-hidden
-          className="bg-brand-yellow absolute top-[21.7%] left-1/2 hidden aspect-square w-[47.8%] rounded-full lg:block"
-        />
-        <div className="absolute right-0 bottom-[-2.2%] hidden aspect-[947/588] h-[74.6%] overflow-hidden lg:block">
-          <Image
-            src="/assets/cooperativas-basket.webp"
-            alt=""
-            width={1408}
-            height={768}
-            priority
-            className="absolute top-[-5.91%] left-[-2.48%] h-[131.17%] w-[149.25%] max-w-none"
+        <div className="absolute right-0 bottom-[-2.2%] hidden aspect-[947/588] h-[74.6%] lg:block">
+          <div
+            aria-hidden
+            className="bg-brand-yellow absolute top-[-6.3%] left-[24.2%] aspect-square w-[72.8%] rounded-full"
           />
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src="/assets/cooperativas-basket.webp"
+              alt=""
+              width={1408}
+              height={768}
+              priority
+              className="absolute top-[-5.91%] left-[-2.48%] h-[131.17%] w-[149.25%] max-w-none"
+            />
+          </div>
         </div>
       </section>
 
