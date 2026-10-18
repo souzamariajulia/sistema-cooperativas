@@ -2,6 +2,8 @@
 
 Portal do cooperado em Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4 e shadcn/ui sobre Base UI. Interface e textos em pt-BR.
 
+@AGENTS.md
+
 ## Comandos
 
 - `pnpm dev`: servidor de desenvolvimento
