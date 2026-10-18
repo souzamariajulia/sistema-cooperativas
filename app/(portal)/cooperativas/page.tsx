@@ -1,26 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 import { KeywordsBar } from '@/components/keywords-bar'
 import { Button } from '@/components/ui/button'
+import { cooperativas } from '@/lib/cooperativas'
+import { cooperativaRoutes } from '@/lib/routes'
 
 export const metadata: Metadata = { title: 'Cooperativas' }
-
-const cooperativas = [
-  {
-    name: 'COOPEVI',
-    description: 'Cooperativa Mista das áreas de Reforma Agrária do Vale do Itapecuru',
-  },
-  {
-    name: 'COOMARA',
-    description: 'Cooperativa Mista dos Assentamentos de Reforma Agrária da Região Tocantina',
-  },
-  {
-    name: 'COOPERVID',
-    description: 'Cooperativa Mista dos Assentamentos de Reforma Agrária da Região Tocantina',
-  },
-] as const
 
 export default function CooperativasPage() {
   return (
@@ -69,9 +57,9 @@ export default function CooperativasPage() {
 
         <h2 className="sr-only">Cooperativas contempladas pelo projeto</h2>
         <ul className="relative z-10 mx-auto flex max-w-[76rem] flex-col gap-8">
-          {cooperativas.map(({ name, description }) => (
+          {cooperativas.map(({ slug, name, description, details }) => (
             <li
-              key={name}
+              key={slug}
               className="group bg-brand-navy text-brand-white grid items-center gap-6 rounded-3xl p-8 shadow-lg transition duration-300 ease-out hover:shadow-2xl motion-safe:hover:-translate-y-1.5 md:grid-cols-[1fr_1.4fr_auto] md:gap-10 md:px-12"
             >
               <h3 className="text-brand-yellow text-4xl font-extrabold xl:text-5xl">{name}</h3>
@@ -80,6 +68,9 @@ export default function CooperativasPage() {
               </p>
               <Button
                 variant="accent"
+                disabled={!details}
+                nativeButton={false}
+                render={<Link href={cooperativaRoutes.sobre(slug)} />}
                 className="group-hover:bg-brand-white w-fit rounded-full transition-colors"
               >
                 Conhecer
