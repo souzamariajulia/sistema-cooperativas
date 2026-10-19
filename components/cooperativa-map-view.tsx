@@ -3,7 +3,10 @@
 import 'leaflet/dist/leaflet.css'
 
 import L from 'leaflet'
+import { Navigation } from 'lucide-react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+
+import { Button } from '@/components/ui/button'
 
 const pin = L.divIcon({
   className: '',
@@ -52,6 +55,22 @@ export default function CooperativaMapView({
         <Popup>
           <strong className="text-brand-navy block text-base">{name}</strong>
           <span className="text-brand-navy block text-sm leading-snug">{description}</span>
+          <Button
+            variant="accent"
+            nativeButton={false}
+            render={
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
+            className="text-brand-navy! mt-3 w-fit rounded-full"
+          >
+            Como chegar
+            <Navigation className="size-4" aria-hidden />
+            <span className="sr-only">(abre o Google Maps em nova aba)</span>
+          </Button>
         </Popup>
       </Marker>
     </MapContainer>
