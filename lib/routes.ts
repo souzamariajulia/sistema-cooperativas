@@ -16,3 +16,9 @@ export const navLinks = [
   { label: 'Recursos', href: routes.recursos },
   { label: 'Sobre o projeto', href: routes.sobre },
 ] as const
+
+export const cooperativaRoutes = {
+  sobre: (slug: string) => `${routes.cooperativas}/${slug}`,
+  identidadeVisual: (slug: string) => `${routes.cooperativas}/${slug}/identidade-visual`,
+  missaoVisaoValores: (slug: string) => `${routes.cooperativas}/${slug}/missao-visao-valores`,
+}
