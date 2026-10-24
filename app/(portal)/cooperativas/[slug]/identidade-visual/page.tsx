@@ -1,13 +1,10 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 import { KeywordsBar } from '@/components/keywords-bar'
 import { PackagingCarousel } from '@/components/packaging-carousel'
-import { Button } from '@/components/ui/button'
 import { getCooperativa } from '@/lib/cooperativas'
-import { routes } from '@/lib/routes'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -33,14 +30,6 @@ export default async function IdentidadeVisualPage({ params }: Props) {
             Identidade Visual
           </h2>
           <p className="line-clamp-3 text-lg leading-relaxed xl:text-xl">{details.about}</p>
-          <Button
-            variant="outline-light"
-            nativeButton={false}
-            render={<Link href={routes.recursos} />}
-            className="w-fit"
-          >
-            Acessar recursos
-          </Button>
 
           <div className="flex flex-col gap-4">
             <h3 className="text-base uppercase">Logotipo</h3>
