@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, FileText, FolderOpen } from 'lucide-react'
+import { ArrowRight, BookOpen, FileText } from 'lucide-react'
 
 import { routes } from '@/lib/routes'
 import { cn } from '@/lib/utils'
@@ -30,15 +30,6 @@ const features = [
     cta: 'Explorar o guia',
     href: routes.guia,
     tone: 'yellow',
-  },
-  {
-    number: '03',
-    icon: FolderOpen,
-    title: 'Recursos',
-    description: 'Materiais, modelos e ferramentas de apoio para a comunicação da sua cooperativa.',
-    cta: 'Explorar recursos',
-    href: routes.recursos,
-    tone: 'navy',
   },
 ] as const
 
