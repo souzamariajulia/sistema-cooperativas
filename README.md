@@ -49,7 +49,6 @@ app/
    ├─ plano/                /plano
    ├─ guia/                 /guia
    ├─ cooperativas/         /cooperativas
-   ├─ recursos/             /recursos
    └─ sobre-o-projeto/      /sobre-o-projeto
 components/
 ├─ ui/                      Componentes base do shadcn (Button, Input, Card, Avatar)
@@ -90,6 +89,5 @@ O projeto usa Prettier sem ponto e vírgula, aspas simples e largura de 100 colu
 
 ## Estado atual
 
-- As páginas `/plano`, `/guia`, `/cooperativas`, `/recursos` e `/sobre-o-projeto` são placeholders.
 - O login ainda não autentica: não há integração com API.
 - Os botões "Sair" e "Explorar…" e o link "Esqueci minha senha" ainda não têm ação.
