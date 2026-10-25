@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: 'Plano' }
 export default function PlanoPage() {
   return (
     <>
-      <section className="bg-brand-teal px-gutter relative flex min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] items-center overflow-hidden py-16">
+      <section className="bg-brand-teal px-gutter relative flex flex-col overflow-hidden py-16 lg:min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] lg:flex-row lg:items-center">
         <div className="text-brand-white relative z-10 flex flex-col gap-8 lg:max-w-[48%]">
           <h1 className="text-4xl leading-tight font-bold xl:text-5xl">
             <span className="block font-normal">Sobre o</span>
@@ -42,11 +42,29 @@ export default function PlanoPage() {
             />
           </div>
         </div>
+
+        <div className="relative mx-auto mt-12 -mb-16 aspect-square w-4/5 max-w-sm lg:hidden">
+          <Image
+            src="/assets/plano-circle.svg"
+            alt=""
+            width={596}
+            height={596}
+            className="absolute bottom-0 left-[15%] w-[70%]"
+          />
+          <Image
+            src="/assets/plano-woman.png"
+            alt=""
+            width={1024}
+            height={1024}
+            sizes="(min-width: 640px) 24rem, 80vw"
+            className="absolute inset-0 size-full -scale-x-100"
+          />
+        </div>
       </section>
 
       <KeywordsBar />
 
-      <section className="bg-brand-navy px-gutter relative flex min-h-[47.5rem] flex-col items-center justify-center gap-12 overflow-hidden py-24 text-center">
+      <section className="bg-brand-navy px-gutter relative flex min-h-[30rem] flex-col items-center justify-center gap-12 overflow-hidden py-24 text-center lg:min-h-[47.5rem]">
         <Image
           src="/assets/plano-field.webp"
           alt=""

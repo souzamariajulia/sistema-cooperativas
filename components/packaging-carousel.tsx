@@ -36,7 +36,7 @@ export function PackagingCarousel({ items, label }: { items: CooperativaImage[];
       role="region"
       aria-roledescription="carrossel"
       aria-label={label}
-      className="flex items-center gap-4"
+      className="flex flex-wrap items-center justify-center gap-4 sm:flex-nowrap"
     >
       <Button
         variant="secondary"
@@ -52,7 +52,7 @@ export function PackagingCarousel({ items, label }: { items: CooperativaImage[];
         ref={trackRef}
         tabIndex={0}
         onScroll={updateScroll}
-        className="focus-visible:outline-brand-navy flex flex-1 snap-x snap-mandatory [scrollbar-width:none] gap-8 overflow-x-auto scroll-smooth focus-visible:outline-2 focus-visible:outline-offset-4 [&::-webkit-scrollbar]:hidden"
+        className="focus-visible:outline-brand-navy order-first flex w-full snap-x snap-mandatory [scrollbar-width:none] gap-8 overflow-x-auto scroll-smooth focus-visible:outline-2 focus-visible:outline-offset-4 sm:order-none sm:w-auto sm:flex-1 [&::-webkit-scrollbar]:hidden"
       >
         {items.map(({ src, alt }) => (
           <li

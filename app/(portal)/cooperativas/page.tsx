@@ -13,7 +13,7 @@ export const metadata: Metadata = { title: 'Cooperativas' }
 export default function CooperativasPage() {
   return (
     <>
-      <section className="bg-brand-teal px-gutter relative flex min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] items-center overflow-hidden py-16">
+      <section className="bg-brand-teal px-gutter relative flex flex-col overflow-hidden py-16 lg:min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] lg:flex-row lg:items-center">
         <div className="text-brand-white relative z-10 flex flex-col gap-8 lg:max-w-[48%]">
           <h1 className="text-4xl leading-tight font-bold xl:text-5xl">
             <span className="block font-normal">Conheça</span>
@@ -40,6 +40,21 @@ export default function CooperativasPage() {
               className="absolute top-[-5.91%] left-[-2.48%] h-[131.17%] w-[149.25%] max-w-none"
             />
           </div>
+        </div>
+
+        <div className="relative mx-auto mt-10 -mb-16 aspect-[1408/768] w-full max-w-md translate-y-[8.2%] lg:hidden">
+          <div
+            aria-hidden
+            className="bg-brand-yellow absolute top-0 left-1/2 aspect-square h-full -translate-x-1/2 rounded-full"
+          />
+          <Image
+            src="/assets/cooperativas-basket.webp"
+            alt=""
+            width={1408}
+            height={768}
+            sizes="(min-width: 448px) 28rem, 100vw"
+            className="relative size-full object-contain"
+          />
         </div>
       </section>
 
