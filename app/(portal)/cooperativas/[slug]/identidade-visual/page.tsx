@@ -22,6 +22,10 @@ export default async function IdentidadeVisualPage({ params }: Props) {
 
   if (!cooperativa || !details) notFound()
 
+  const bounds = details.portraitBounds
+  const portraitWidth = bounds.right - bounds.left + 1
+  const portraitHeight = bounds.bottom - bounds.top + 1
+
   return (
     <>
       <section className="bg-brand-navy text-brand-white px-gutter relative overflow-hidden py-16">
@@ -89,6 +93,25 @@ export default async function IdentidadeVisualPage({ params }: Props) {
             priority
             sizes="68vw"
             className="object-cover object-[51%_top]"
+          />
+        </div>
+
+        <div
+          className="relative mx-auto mt-12 -mb-16 w-4/5 max-w-xs overflow-hidden lg:hidden"
+          style={{ aspectRatio: `${portraitWidth} / ${portraitHeight}` }}
+        >
+          <Image
+            src={details.portrait}
+            alt=""
+            width={bounds.width}
+            height={bounds.height}
+            sizes="(min-width: 640px) 20rem, 80vw"
+            className="absolute max-w-none"
+            style={{
+              width: `${(bounds.width / portraitWidth) * 100}%`,
+              left: `${(-bounds.left / portraitWidth) * 100}%`,
+              top: `${(-bounds.top / portraitHeight) * 100}%`,
+            }}
           />
         </div>
       </section>

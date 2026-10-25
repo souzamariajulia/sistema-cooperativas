@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 export default function HomePage() {
   return (
     <>
-      <section className="bg-brand-navy px-gutter relative flex min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] items-center overflow-hidden py-16">
+      <section className="bg-brand-navy px-gutter relative flex flex-col overflow-hidden py-16 lg:min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] lg:flex-row lg:items-center">
         <div className="relative z-10 flex flex-col gap-8 lg:max-w-[55%]">
           <h1 className="text-brand-white flex flex-col gap-5 font-bold">
             <span className="text-brand-yellow text-4xl leading-tight xl:text-5xl">
@@ -35,6 +35,14 @@ export default function HomePage() {
           height={809}
           priority
           className="absolute right-0 bottom-0 hidden h-[95%] w-auto max-w-none translate-y-[3.9%] lg:block"
+        />
+        <Image
+          src="/assets/person-ellipse.png"
+          alt=""
+          width={780}
+          height={809}
+          sizes="(min-width: 640px) 24rem, 80vw"
+          className="mx-auto mt-12 -mb-16 h-auto w-4/5 max-w-sm translate-y-[3.9%] lg:hidden"
         />
       </section>
       <KeywordsBar />

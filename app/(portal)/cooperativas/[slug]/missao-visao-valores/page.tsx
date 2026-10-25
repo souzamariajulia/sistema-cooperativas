@@ -22,11 +22,11 @@ export default async function MissaoVisaoValoresPage({ params }: Props) {
   return (
     <>
       <section className="bg-brand-navy px-gutter py-24">
-        <ul className="mx-auto grid max-w-[83rem] md:grid-cols-3">
+        <ul className="mx-auto grid max-w-[83rem] grid-cols-1 md:grid-cols-3">
           {details.institutional.map(({ title, text, background, color }) => (
             <li
               key={title}
-              className="flex min-h-[23.6rem] flex-col gap-12 p-8"
+              className="flex flex-col gap-8 p-8 md:min-h-[23.6rem] md:gap-12"
               style={{ backgroundColor: background, color }}
             >
               <h2 className="text-xl font-extrabold uppercase">{title}</h2>

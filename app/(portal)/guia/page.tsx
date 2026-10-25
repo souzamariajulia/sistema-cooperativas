@@ -80,7 +80,7 @@ const focusAreas = [
 export default function GuiaPage() {
   return (
     <>
-      <section className="bg-brand-navy px-gutter flex min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))] items-center py-16">
+      <section className="bg-brand-navy px-gutter flex items-center py-16 lg:min-h-[calc(100vh-var(--navbar-height)-var(--keywords-bar-height))]">
         <div className="text-brand-white flex flex-col gap-8">
           <h1 className="text-4xl leading-tight font-bold xl:text-5xl">
             Sobre o <strong className="text-brand-yellow font-bold">Guia de implementação</strong>
@@ -136,7 +136,7 @@ export default function GuiaPage() {
               <li
                 key={title}
                 className={cn(
-                  'flex min-h-96 flex-col justify-center gap-4 rounded-lg p-8',
+                  'flex min-h-72 flex-col justify-center gap-4 rounded-lg p-8 lg:min-h-96',
                   tones[tone],
                 )}
               >

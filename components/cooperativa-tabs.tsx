@@ -17,7 +17,7 @@ export function CooperativaTabs({ slug }: { slug: string }) {
 
   return (
     <nav aria-label="Seções da cooperativa" className="bg-brand-white text-brand-navy px-gutter">
-      <ul className="mx-auto flex max-w-5xl justify-start gap-10 overflow-x-auto py-5 md:justify-center md:gap-24">
+      <ul className="mx-auto flex max-w-5xl justify-between gap-4 overflow-x-auto py-5 md:justify-center md:gap-24">
         {tabs.map(({ label, href }) => {
           const active = pathname === href
 
@@ -27,7 +27,7 @@ export function CooperativaTabs({ slug }: { slug: string }) {
                 href={href}
                 aria-current={active ? 'page' : undefined}
                 className={cn(
-                  'hover:text-brand-teal text-base whitespace-nowrap transition-colors xl:text-lg',
+                  'hover:text-brand-teal text-sm whitespace-nowrap transition-colors md:text-base xl:text-lg',
                   active ? 'font-extrabold' : 'font-medium',
                 )}
               >

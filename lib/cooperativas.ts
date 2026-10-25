@@ -9,11 +9,21 @@ export type InstitutionalSection = {
   color: string
 }
 
+export type ImageBounds = {
+  width: number
+  height: number
+  left: number
+  top: number
+  right: number
+  bottom: number
+}
+
 export type CooperativaDetails = {
   about: string
   identityIntro?: string
   location?: { latitude: number; longitude: number; zoom: number; title: string }
   portrait: string
+  portraitBounds: ImageBounds
   logo: SizedImage
   colors: string[]
   typographies?: SizedImage[]
@@ -58,6 +68,7 @@ export const cooperativas: Cooperativa[] = [
         title: 'Localização da COOPEVI no mapa',
       },
       portrait: '/assets/cooperativas/coopevi/person.webp',
+      portraitBounds: { width: 1281, height: 832, left: 381, top: 30, right: 933, bottom: 831 },
       logo: {
         src: '/assets/cooperativas/coopevi/logo.webp',
         alt: 'Logotipo da COOPEVI',
@@ -93,6 +104,7 @@ export const cooperativas: Cooperativa[] = [
       about:
         'Sediada na Rua São Francisco, s/n, Projeto de Assentamento Nova Conquista, zona rural, em Açailândia (Região Tocantina), a COOMARA (CNPJ 02.023.043/0001-18) teve a assembleia geral de 57 fundação realizada em 22 de junho de 1997, no Salão Paroquial Católico de Imperatriz, reunindo cooperados dos assentamentos da região, entre eles o Assentamento Itacira, e o ato constitutivo protocolado na Junta Comercial do Estado do Maranhão em 08 de julho de 1997, com NIRE 21400004515 concedido em 21 de julho de 1997 e data de abertura em 08 de agosto de 1997, sequência que o próprio timbre da entidade reproduz e que o extrato do Cadastro Nacional da Agricultura Familiar confirma.',
       portrait: '/assets/cooperativas/coomara/person.webp',
+      portraitBounds: { width: 1215, height: 1600, left: 108, top: 143, right: 957, bottom: 1576 },
       logo: {
         src: '/assets/cooperativas/coomara/logo.webp',
         alt: 'Logotipo da COOMARA',
@@ -152,6 +164,7 @@ export const cooperativas: Cooperativa[] = [
       about:
         'A COOPERVID — Cooperativa de Produção Agropecuária dos Produtores da Microrregião da Baixada Maranhense — atua no Assentamento Diamante Negro Jutaí, em Igarapé do Meio, também na Baixada Maranhense. É a cooperativa mais recente do ecossistema em termos de visibilidade nacional, tendo ganhado projeção com o Projeto Arroz Diamante — iniciativa iniciada em 2023 em parceria com a Prefeitura de Igarapé do Meio, o MST e a mineradora Vale, que expandiu a área plantada de 25 para 50 hectares, com expectativa de produção superior a 80 toneladas de arroz, envolvendo mais de 15 famílias.',
       portrait: '/assets/cooperativas/coopervid/person.webp',
+      portraitBounds: { width: 1215, height: 1600, left: 58, top: 172, right: 908, bottom: 1573 },
       logo: {
         src: '/assets/cooperativas/coopervid/logo.webp',
         alt: 'Logotipo do Projeto Arroz Diamante',

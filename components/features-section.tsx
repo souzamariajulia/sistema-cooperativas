@@ -72,6 +72,16 @@ export function FeaturesSection() {
         height={1435}
         className="absolute top-[13.2%] right-0 hidden h-[120%] w-auto max-w-none lg:block"
       />
+      <div className="relative mx-auto mt-12 -mb-16 aspect-[810/1033] w-4/5 max-w-xs overflow-hidden lg:hidden">
+        <Image
+          src="/assets/person-thinking.png"
+          alt=""
+          width={1265}
+          height={1435}
+          sizes="(min-width: 640px) 20rem, 80vw"
+          className="absolute top-0 -left-[56.2%] h-auto w-[156.2%] max-w-none"
+        />
+      </div>
     </section>
   )
 }
