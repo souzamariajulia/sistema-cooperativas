@@ -20,3 +20,8 @@ export const cooperativaRoutes = {
   identidadeVisual: (slug: string) => `${routes.cooperativas}/${slug}/identidade-visual`,
   missaoVisaoValores: (slug: string) => `${routes.cooperativas}/${slug}/missao-visao-valores`,
 }
+
+export const docs = {
+  plano: '/docs/PLANO_NEGOCIO_COMUNICACAO_ESTRATEGICA.pdf',
+  guia: '/docs/GUIA_TRANSFORMACAO_DIGITAL.pdf',
+} as const

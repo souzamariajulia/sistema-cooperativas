@@ -4,6 +4,7 @@ import { Download } from 'lucide-react'
 
 import { KeywordsBar } from '@/components/keywords-bar'
 import { Button } from '@/components/ui/button'
+import { docs } from '@/lib/routes'
 
 export const metadata: Metadata = { title: 'Plano' }
 
@@ -61,7 +62,12 @@ export default function PlanoPage() {
           <strong className="text-brand-yellow font-black">transformação digital</strong>
           <span className="text-brand-yellow">.</span>
         </p>
-        <Button variant="outline-light" className="relative z-10">
+        <Button
+          variant="outline-light"
+          className="relative z-10"
+          nativeButton={false}
+          render={<a href={docs.plano} download />}
+        >
           Baixar plano em pdf
           <Download className="size-5" aria-hidden />
         </Button>
