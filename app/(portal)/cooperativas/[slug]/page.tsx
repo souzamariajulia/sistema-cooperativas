@@ -34,11 +34,13 @@ export default async function SobrePage({ params }: Props) {
 
       <KeywordsBar />
 
-      <CooperativaMap
-        {...details.location}
-        name={cooperativa.name}
-        description={cooperativa.description}
-      />
+      {details.location && (
+        <CooperativaMap
+          {...details.location}
+          name={cooperativa.name}
+          description={cooperativa.description}
+        />
+      )}
     </>
   )
 }

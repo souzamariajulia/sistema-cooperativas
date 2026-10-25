@@ -29,16 +29,18 @@ export default async function IdentidadeVisualPage({ params }: Props) {
           <h2 className="text-brand-yellow text-4xl leading-tight font-bold xl:text-5xl">
             Identidade Visual
           </h2>
-          <p className="line-clamp-3 text-lg leading-relaxed xl:text-xl">{details.about}</p>
+          <p className="text-lg leading-relaxed xl:text-xl">
+            Contemple e acesse os recursos visuais referente à {cooperativa.description}
+          </p>
 
           <div className="flex flex-col gap-4">
             <h3 className="text-base uppercase">Logotipo</h3>
             <Image
               src={details.logo.src}
               alt={details.logo.alt}
-              width={512}
-              height={512}
-              className="size-64"
+              width={details.logo.width}
+              height={details.logo.height}
+              className="h-auto max-h-64 w-auto max-w-full self-start"
             />
           </div>
 
@@ -61,9 +63,17 @@ export default async function IdentidadeVisualPage({ params }: Props) {
           {details.typographies && (
             <div className="flex flex-col gap-4">
               <h3 className="text-base uppercase">Tipografias</h3>
-              <ul className="flex flex-col gap-1 text-lg">
-                {details.typographies.map((typography) => (
-                  <li key={typography}>{typography}</li>
+              <ul className="flex flex-col gap-4">
+                {details.typographies.map(({ src, alt, width, height }) => (
+                  <li key={src}>
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={width}
+                      height={height}
+                      className="h-auto max-h-10 w-auto max-w-full"
+                    />
+                  </li>
                 ))}
               </ul>
             </div>
@@ -84,19 +94,21 @@ export default async function IdentidadeVisualPage({ params }: Props) {
 
       <KeywordsBar />
 
-      <section className="text-brand-navy px-gutter relative overflow-hidden bg-neutral-100 py-16">
-        <div
-          aria-hidden
-          className="bg-brand-yellow absolute top-[26%] left-[3.5%] aspect-square w-[92%] rounded-full"
-        />
-        <div className="relative z-10 mx-auto flex max-w-[83rem] flex-col gap-10">
-          <h2 className="text-4xl leading-tight font-extrabold xl:text-5xl">Embalagens</h2>
-          <PackagingCarousel
-            items={details.packaging}
-            label={`Embalagens da ${cooperativa.name}`}
+      {details.packaging.length > 0 && (
+        <section className="text-brand-navy px-gutter relative overflow-hidden bg-neutral-100 py-16">
+          <div
+            aria-hidden
+            className="bg-brand-yellow absolute top-[26%] left-[3.5%] aspect-square w-[92%] rounded-full"
           />
-        </div>
-      </section>
+          <div className="relative z-10 mx-auto flex max-w-[83rem] flex-col gap-10">
+            <h2 className="text-4xl leading-tight font-extrabold xl:text-5xl">Embalagens</h2>
+            <PackagingCarousel
+              items={details.packaging}
+              label={`Embalagens da ${cooperativa.name}`}
+            />
+          </div>
+        </section>
+      )}
     </>
   )
 }
