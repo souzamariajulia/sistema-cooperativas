@@ -18,7 +18,7 @@ export function Navbar() {
 
   return (
     <header className="text-brand-navy px-gutter sticky top-0 z-50 h-(--navbar-height) py-3">
-      <div className="bg-brand-white/60 border-brand-navy/10 shadow-brand-navy/10 relative grid h-full grid-cols-[1fr_auto_1fr] items-center rounded-full border px-4 shadow-lg backdrop-blur-xl backdrop-saturate-150">
+      <div className="bg-brand-white/60 border-brand-navy/10 shadow-brand-navy/10 relative grid h-full grid-cols-[1fr_auto_1fr] items-center rounded-lg border px-4 shadow-lg backdrop-blur-xl backdrop-saturate-150">
         <span />
         <nav aria-label="Principal" className="hidden gap-2 lg:flex">
           {navLinks.map(({ label, href }) => {
@@ -72,7 +72,7 @@ export function Navbar() {
         {menuOpen && (
           <div
             id="mobile-menu"
-            className="bg-brand-white/95 border-brand-navy/10 shadow-brand-navy/10 absolute inset-x-0 top-full mt-2 flex flex-col gap-1 rounded-3xl border px-4 pt-2 pb-4 shadow-lg backdrop-blur-xl lg:hidden"
+            className="bg-brand-white/95 border-brand-navy/10 shadow-brand-navy/10 absolute inset-x-0 top-full mt-2 flex flex-col gap-1 rounded-lg border px-4 pt-2 pb-4 shadow-lg backdrop-blur-xl lg:hidden"
           >
             <nav aria-label="Principal" className="flex flex-col gap-1">
               {navLinks.map(({ label, href }) => {
