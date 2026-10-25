@@ -30,7 +30,8 @@ export default async function IdentidadeVisualPage({ params }: Props) {
             Identidade Visual
           </h2>
           <p className="text-lg leading-relaxed xl:text-xl">
-            Contemple e acesse os recursos visuais referente à {cooperativa.description}
+            {details.identityIntro ??
+              `Contemple e acesse os recursos visuais referente à ${cooperativa.description}`}
           </p>
 
           <div className="flex flex-col gap-4">

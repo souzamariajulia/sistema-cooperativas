@@ -11,6 +11,7 @@ export type InstitutionalSection = {
 
 export type CooperativaDetails = {
   about: string
+  identityIntro?: string
   location?: { latitude: number; longitude: number; zoom: number; title: string }
   portrait: string
   logo: SizedImage
@@ -87,6 +88,8 @@ export const cooperativas: Cooperativa[] = [
     name: 'COOMARA',
     description: 'Cooperativa Mista dos Assentamentos de Reforma Agrária da Região Tocantina LTDA',
     details: {
+      identityIntro:
+        'Contemple e acesse os recursos visuais referente à Cooperativa Mista dos Assentamentos de Reforma Agrária da Região Tocantina LTDA - COOMARA',
       about:
         'Sediada na Rua São Francisco, s/n, Projeto de Assentamento Nova Conquista, zona rural, em Açailândia (Região Tocantina), a COOMARA (CNPJ 02.023.043/0001-18) teve a assembleia geral de 57 fundação realizada em 22 de junho de 1997, no Salão Paroquial Católico de Imperatriz, reunindo cooperados dos assentamentos da região, entre eles o Assentamento Itacira, e o ato constitutivo protocolado na Junta Comercial do Estado do Maranhão em 08 de julho de 1997, com NIRE 21400004515 concedido em 21 de julho de 1997 e data de abertura em 08 de agosto de 1997, sequência que o próprio timbre da entidade reproduz e que o extrato do Cadastro Nacional da Agricultura Familiar confirma.',
       portrait: '/assets/cooperativas/coomara/person.webp',
