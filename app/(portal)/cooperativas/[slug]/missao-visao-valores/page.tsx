@@ -30,7 +30,15 @@ export default async function MissaoVisaoValoresPage({ params }: Props) {
               style={{ backgroundColor: background, color }}
             >
               <h2 className="text-xl font-extrabold uppercase">{title}</h2>
-              <p className="text-lg leading-snug xl:text-xl">{text}</p>
+              {Array.isArray(text) ? (
+                <ul className="list-disc space-y-1 pl-6 text-lg leading-snug xl:text-xl">
+                  {text.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-lg leading-snug xl:text-xl">{text}</p>
+              )}
             </li>
           ))}
         </ul>
