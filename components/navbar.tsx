@@ -17,94 +17,96 @@ export function Navbar() {
     href === routes.home ? pathname === href : pathname.startsWith(href)
 
   return (
-    <header className="bg-brand-white text-brand-navy px-gutter relative z-50 grid h-(--navbar-height) grid-cols-[1fr_auto_1fr] items-center">
-      <span />
-      <nav aria-label="Principal" className="hidden gap-2 lg:flex">
-        {navLinks.map(({ label, href }) => {
-          const active = isActive(href)
+    <header className="text-brand-navy px-gutter sticky top-0 z-50 h-(--navbar-height) py-3">
+      <div className="bg-brand-white/60 border-brand-navy/10 shadow-brand-navy/10 relative grid h-full grid-cols-[1fr_auto_1fr] items-center rounded-full border px-4 shadow-lg backdrop-blur-xl backdrop-saturate-150">
+        <span />
+        <nav aria-label="Principal" className="hidden gap-2 lg:flex">
+          {navLinks.map(({ label, href }) => {
+            const active = isActive(href)
 
-          return (
-            <Link
-              key={label}
-              href={href}
-              aria-current={active ? 'page' : undefined}
-              className={`relative rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
-                active ? '' : 'hover:text-brand-white hover:bg-nav-hover'
-              }`}
-            >
-              {label}
-              {active && (
-                <span className="bg-brand-teal absolute inset-x-5 -bottom-1 h-[3px] rounded-full" />
-              )}
-            </Link>
-          )
-        })}
-      </nav>
+            return (
+              <Link
+                key={label}
+                href={href}
+                aria-current={active ? 'page' : undefined}
+                className={`relative rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
+                  active ? '' : 'hover:text-brand-white hover:bg-nav-hover'
+                }`}
+              >
+                {label}
+                {active && (
+                  <span className="bg-brand-teal absolute inset-x-5 -bottom-1 h-[3px] rounded-full" />
+                )}
+              </Link>
+            )
+          })}
+        </nav>
 
-      <div className="col-start-3 justify-self-end">
-        <Button
-          variant="ghost"
-          size="icon-lg"
-          aria-label="Sair"
-          className="hidden lg:inline-flex"
-          onClick={() => router.push(routes.login)}
-        >
-          <LogOut className="size-5" aria-hidden />
-        </Button>
-        <Button
-          variant="ghost"
-          size="icon-lg"
-          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          onClick={() => setMenuOpen((open) => !open)}
-          className="lg:hidden"
-        >
-          {menuOpen ? (
-            <X className="size-5" aria-hidden />
-          ) : (
-            <Menu className="size-5" aria-hidden />
-          )}
-        </Button>
-      </div>
-
-      {menuOpen && (
-        <div
-          id="mobile-menu"
-          className="bg-brand-white px-gutter absolute inset-x-0 top-full flex flex-col gap-1 border-t pt-2 pb-4 shadow-lg lg:hidden"
-        >
-          <nav aria-label="Principal" className="flex flex-col gap-1">
-            {navLinks.map(({ label, href }) => {
-              const active = isActive(href)
-
-              return (
-                <Link
-                  key={label}
-                  href={href}
-                  aria-current={active ? 'page' : undefined}
-                  onClick={() => setMenuOpen(false)}
-                  className={`rounded-lg px-4 py-3 text-sm font-semibold transition-colors ${
-                    active ? 'bg-muted' : 'hover:text-brand-white hover:bg-nav-hover'
-                  }`}
-                >
-                  {label}
-                </Link>
-              )
-            })}
-          </nav>
+        <div className="col-start-3 justify-self-end">
           <Button
             variant="ghost"
-            className="mt-2 justify-start gap-3 px-4 text-sm"
-            onClick={() => {
-              setMenuOpen(false)
-              router.push(routes.login)
-            }}
+            size="icon-lg"
+            aria-label="Sair"
+            className="hidden lg:inline-flex"
+            onClick={() => router.push(routes.login)}
           >
             <LogOut className="size-5" aria-hidden />
-            Sair
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon-lg"
+            aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="lg:hidden"
+          >
+            {menuOpen ? (
+              <X className="size-5" aria-hidden />
+            ) : (
+              <Menu className="size-5" aria-hidden />
+            )}
           </Button>
         </div>
-      )}
+
+        {menuOpen && (
+          <div
+            id="mobile-menu"
+            className="bg-brand-white/95 border-brand-navy/10 shadow-brand-navy/10 absolute inset-x-0 top-full mt-2 flex flex-col gap-1 rounded-3xl border px-4 pt-2 pb-4 shadow-lg backdrop-blur-xl lg:hidden"
+          >
+            <nav aria-label="Principal" className="flex flex-col gap-1">
+              {navLinks.map(({ label, href }) => {
+                const active = isActive(href)
+
+                return (
+                  <Link
+                    key={label}
+                    href={href}
+                    aria-current={active ? 'page' : undefined}
+                    onClick={() => setMenuOpen(false)}
+                    className={`rounded-lg px-4 py-3 text-sm font-semibold transition-colors ${
+                      active ? 'bg-muted' : 'hover:text-brand-white hover:bg-nav-hover'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                )
+              })}
+            </nav>
+            <Button
+              variant="ghost"
+              className="mt-2 justify-start gap-3 px-4 text-sm"
+              onClick={() => {
+                setMenuOpen(false)
+                router.push(routes.login)
+              }}
+            >
+              <LogOut className="size-5" aria-hidden />
+              Sair
+            </Button>
+          </div>
+        )}
+      </div>
     </header>
   )
 }
