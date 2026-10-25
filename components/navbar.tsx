@@ -1,24 +1,45 @@
 'use client'
 
 import { useRouter, usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { LogOut, Menu, X } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { navLinks, routes } from '@/lib/routes'
+import { cn } from '@/lib/utils'
 
 export function Navbar() {
   const pathname = usePathname()
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 8)
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => window.removeEventListener('scroll', update)
+  }, [])
 
   const isActive = (href: string) =>
     href === routes.home ? pathname === href : pathname.startsWith(href)
 
   return (
-    <header className="text-brand-navy px-gutter sticky top-0 z-50 h-(--navbar-height) py-3">
-      <div className="bg-brand-white/60 border-brand-navy/10 shadow-brand-navy/10 relative grid h-full grid-cols-[1fr_auto_1fr] items-center rounded-lg border px-4 shadow-lg backdrop-blur-xl backdrop-saturate-150">
+    <header
+      className={cn(
+        'text-brand-navy sticky top-0 z-50 h-(--navbar-height) transition-[padding] duration-300 ease-out motion-reduce:transition-none',
+        scrolled ? 'px-gutter py-3' : 'p-0',
+      )}
+    >
+      <div
+        className={cn(
+          'relative grid h-full grid-cols-[1fr_auto_1fr] items-center border transition-[padding,background-color,border-color,border-radius,box-shadow,backdrop-filter] duration-300 ease-out motion-reduce:transition-none',
+          scrolled
+            ? 'bg-brand-white/60 border-brand-navy/10 shadow-brand-navy/10 rounded-lg px-4 shadow-lg backdrop-blur-xl backdrop-saturate-150'
+            : 'bg-brand-white px-gutter border-transparent shadow-none',
+        )}
+      >
         <span />
         <nav aria-label="Principal" className="hidden gap-2 lg:flex">
           {navLinks.map(({ label, href }) => {
