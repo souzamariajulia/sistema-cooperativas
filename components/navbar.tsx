@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { LogOut, Menu, X } from 'lucide-react'
 
+import { LogoMark } from '@/components/logo-mark'
 import { Button } from '@/components/ui/button'
 import { navLinks, routes } from '@/lib/routes'
 import { cn } from '@/lib/utils'
@@ -40,7 +41,13 @@ export function Navbar() {
             : 'bg-brand-white px-gutter border-transparent shadow-none',
         )}
       >
-        <span />
+        <Link
+          href={routes.home}
+          aria-label="Cooperativas da Reforma Agrária, início"
+          className="w-fit"
+        >
+          <LogoMark className="h-9 w-auto" />
+        </Link>
         <nav aria-label="Principal" className="hidden gap-2 lg:flex">
           {navLinks.map(({ label, href }) => {
             const active = isActive(href)
