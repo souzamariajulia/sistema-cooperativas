@@ -3,6 +3,7 @@ import { Download } from 'lucide-react'
 
 import { KeywordsBar } from '@/components/keywords-bar'
 import { Button } from '@/components/ui/button'
+import { docs } from '@/lib/routes'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = { title: 'Guia' }
@@ -88,7 +89,12 @@ export default function GuiaPage() {
             O guia foi desenvolvido para auxiliar as cooperativas na aplicação das estratégias
             propostas no Plano de Negócio.
           </p>
-          <Button variant="outline-light" className="w-fit">
+          <Button
+            variant="outline-light"
+            className="w-fit"
+            nativeButton={false}
+            render={<a href={docs.guia} download />}
+          >
             Baixar guia completo
             <Download className="size-5" aria-hidden />
           </Button>
